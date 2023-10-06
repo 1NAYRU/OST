@@ -5,11 +5,14 @@
         if(empty($_POST['password'])) exit('Поле "пароль" не заполнено');
         if(empty($_POST['password1'])) exit('Поле "пароль" не заполнено');
         if(empty($_POST['mail'])) exit('Поле "почта" не заполнено');
-        if(password.length < 8) exit ('пароль не соответствует критерию длины');
+        include("form.php");
+        $len = strlen($_POST["password"]);
+        if($len<8)exit('Минимальное длина пароля 8 символов');
         if($_POST['password'] !== $_POST['password1']) exit('Пороли не совподают');
 
+        else {
         echo 'Здравствуйте, '.htmlspecialchars($_POST['name']).'. <br>';
-        echo 'Ваш аккаунт создан'.'. <br>';
+        echo 'Ваш аккаунт создан'.'. <br>';}
 
 ?>
   
