@@ -6,7 +6,7 @@
     $connection = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
 
     try{ 
-        $connection->set Attribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $connection-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "База данных успешно подключена";
     }
     catch(PDOException $e){
