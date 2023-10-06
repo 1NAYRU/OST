@@ -5,7 +5,6 @@
         if(empty($_POST['password'])) exit('Поле "пароль" не заполнено');
         if(empty($_POST['password1'])) exit('Поле "пароль" не заполнено');
         if(empty($_POST['mail'])) exit('Поле "почта" не заполнено');
-        include("form.php");
         $len = strlen($_POST["password"]);
         if($len<8)exit('Минимальное длина пароля 8 символов');
         if($_POST['password'] !== $_POST['password1']) exit('Пороли не совподают');
