@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <form action="q.php" method="post">
+        <form action="action.php" method="post">
         <p><span class="error"> * обязательное поле </span></p>
             <p>Логин:<span class="error">* <input type="text" name="name" required></p>
             <p>Пароль:<span class="error">* <input type="password" name="password" required></p>
