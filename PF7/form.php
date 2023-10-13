@@ -12,10 +12,10 @@
     <body>
         <form action="q.php" method="post">
         <p><span class="error"> * обязательное поле </span></p>
-            <p>Логин:<span class="error">* <input type="text" name="name"></p>
-            <p>Пароль:<span class="error">* <input type="password" name="password"></p>
-            <p>Подтвердите пароль:<span class="error">* <input type="password" name="password1"></p>
-            <p>Почта:<span class="error">* <input type="email" name="mail"></p>
+            <p>Логин:<span class="error">* <input type="text" name="name" required></p>
+            <p>Пароль:<span class="error">* <input type="password" name="password" required></p>
+            <p>Подтвердите пароль:<span class="error">* <input type="password" name="password1" required></p>
+            <p>Почта:<span class="error">* <input type="email" name="mail" required></p>
             <p><input type="submit" value="Зарегестрироваться"></p> 
         </form>
     </body>
