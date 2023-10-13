@@ -17,6 +17,18 @@
         
         $pas_hash=password_hash($_POST['password'],PASSWORD_DEFAULT);
         
+        $select = $connection->prepare("SELECT COUNT(`id`) as cnt FROM `users` WHERE `login` =?;");
+        $res = $select->execute([$_POST['login']]);
+        $row = $select->fetch();
+
+        if (!$res){
+                exit('Ошибка регистрации');
+        }
+
+        if($res && isset($row['cnt'])&& $row[0]>0){
+                exit('Пользователь уже существует');
+        }
+
         //создание нового пользователя
         $date = [ $_POST['name'], $pas_hash, $_POST['mail']];
         $res = $connection->prepare("INSERT INTO `PF7_users` (`name`,`password`,`Email`) VALUES (?,?,?);");
@@ -25,6 +37,7 @@
                 exit('Регистрация прошла успешно');
         }
         exit('Ошибка регистрации');
+
         
 ?>
   
